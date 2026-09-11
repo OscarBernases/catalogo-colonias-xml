@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- restriccion que id sea de la forma CXXX -->
+    <xs:simpleType name="tipoId">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="C\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- restriccion que genero sea masculino, femenino o unisex -->
+    <xs:simpleType name="tipoGenero">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="masculino"/>
+            <xs:enumeration value="femenino"/>
+            <xs:enumeration value="unisex"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- restriccion que disponible sea si o no -->
+    <xs:simpleType name="tipoDisponible">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="si"/>
+            <xs:enumeration value="no"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- restriccion que sea 0 o + -->
+    <xs:simpleType name="tipoPrecio">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- restriccion que no sea negativo -->
+    <xs:simpleType name="tipoStock">
+        <xs:restriction base="xs:nonNegativeInteger"/>
+    </xs:simpleType>
+
+    <!-- TIPOS COMPLEJOS -->
+
+    <xs:complexType name="tipoElementoPrecio">
+        <xs:simpleContent>
+            <xs:extension base="tipoPrecio">
+                <xs:attribute name="ml" type="xs:positiveInteger" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Producto -->
+    <xs:complexType name="tipoProducto">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="marca" type="xs:string"/>
+            <xs:element name="precio" type="tipoElementoPrecio"/>
+            <xs:element name="stock" type="tipoStock"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="tipoId" use="required"/>
+        <xs:attribute name="genero" type="tipoGenero" use="required"/>
+        <xs:attribute name="disponible" type="tipoDisponible" use="required"/>
+    </xs:complexType>
+
+    <!-- Catálogo raíz -->
+    <xs:complexType name="tipoCatalogo">
+        <xs:sequence>
+            <xs:element name="producto" type="tipoProducto"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ELEMENTO RAÍZ -->
+    <xs:element name="catalogo" type="tipoCatalogo"/>
+    
+
+</xs:schema>

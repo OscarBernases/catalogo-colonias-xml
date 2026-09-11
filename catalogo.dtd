@@ -1,0 +1,11 @@
+<!ELEMENT catalogo (producto+)>
+
+<!ELEMENT producto (nombre, marca, precio, stock)>
+<!ATTLIST producto id ID #REQUIRED genero (masculino|femenino|unisex) #REQUIRED disponible (si|no) #REQUIRED >
+
+<!ELEMENT nombre  (#PCDATA)>
+<!ELEMENT marca   (#PCDATA)>
+<!ELEMENT stock   (#PCDATA)>
+
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio ml CDATA #REQUIRED>

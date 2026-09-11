@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="catalogo.xsl"?>
+<!DOCTYPE catalogo SYSTEM "catalogo.dtd">
+
+<catalogo>
+
+    <producto id="C001" genero="masculino" disponible="si">
+        <nombre>Colonia 1</nombre>
+        <marca>Kenzo</marca>
+        <precio ml="60">54.50</precio>
+        <stock>18</stock>
+    </producto>
+
+    <producto id="C002" genero="masculino" disponible="no">
+        <nombre>Colonia 2</nombre>
+        <marca>Yves Saint Laurent</marca>
+        <precio ml="100">109.00</precio>
+        <stock>0</stock>
+    </producto>
+
+    <producto id="C003" genero="masculino" disponible="si">
+        <nombre>Colonia 3</nombre>
+        <marca>Diesel</marca>
+        <precio ml="75">62.00</precio>
+        <stock>15</stock>
+    </producto>
+
+    <producto id="C004" genero="masculino" disponible="si">
+        <nombre>Colonia 4</nombre>
+        <marca>Calvin Klein</marca>
+        <precio ml="100">45.00</precio>
+        <stock>30</stock>
+    </producto>
+
+    <producto id="C005" genero="femenino" disponible="si">
+        <nombre>Colonia 5</nombre>
+        <marca>Chanel</marca>
+        <precio ml="50">92.00</precio>
+        <stock>12</stock>
+    </producto>
+
+    <producto id="C006" genero="femenino" disponible="no">
+        <nombre>Colonia 6</nombre>
+        <marca>Carolina Herrera</marca>
+        <precio ml="80">99.95</precio>
+        <stock>0</stock>
+    </producto>
+
+</catalogo>
