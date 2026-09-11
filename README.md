@@ -19,9 +19,9 @@ Este proyecto almacena un catálogo de colonias como datos estructurados en XML.
 
 ```
 catalogo-colonias-xml/
-├── catalogo.xml          Datos del catálogo
-├── catalogo.dtd           Definición de tipo de documento (validación)
-├── catalogo.xsd            Esquema XML (validación)
+├── catalogo.xml             Datos del catálogo
+├── catalogo.dtd             Definición de tipo de documento (validación)
+├── catalogo.xsd             Esquema XML (validación)
 ├── catalogo.xsl             Hoja de transformación XSLT
 ├── css/
 │   └── styles.css           Hoja de estilos de la vista HTML resultante
